@@ -18,24 +18,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            animation: scaleBackground 10s infinite alternate; /* Modifica la durata e lo stile dell'animazione */
+            object-fit: contain;
         }
 
-        @keyframes scaleBackground {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
-        }
-
-        .black-rectangle {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 5000px;
-            background-color: black;
-            z-index: 0; /* Assicura che il rettangolo sia dietro l'immagine di sfondo e gli altri elementi */
-        }
 
         .cities-container {
             position: absolute;
@@ -76,12 +61,8 @@
             100% { opacity: 1; transform: translateX(0); }
         }
 
-        /* Aggiunte media query per renderlo responsivo */
-        @media only screen and (max-width: 600px) {
-            .city {
-                font-size: 24px;
-            }
-        }
+    
+        
 
         #city1 { top: 80px; left: 560px; }
         #city2 { top: 180px; left: 580px; }
