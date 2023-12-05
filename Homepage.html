@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://larivoluzionedelleseppie.org/wp-content/uploads/2023/09/digi-paese2.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .cities-container {
+            position: absolute;
+        }
+
+        .city {
+            padding: 10px;
+            margin: 5px;
+            position: absolute;
+            font-size: 36px;
+            font-family: 'Pan', sans-serif;
+            color: #00FF00;
+            transition: left 0.5s ease, top 0.5s ease;
+        }
+
+        #city1 { top: 80px; left: 560px; }
+        #city2 { top: 180px; left: 580px; }
+        #city3 { top: 200px; left: 850px; }
+        #city4 { top: 270px; left: 530px; }
+        #city5 { top: 370px; left: 550px; }
+        #city6 { top: 420px; left: 640px; }
+        #city7 { top: 530px; left: 550px; }
+
+        /* Aggiunto stile per i quadrati */
+        .color-box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            display: none;
+            animation: fadeInAndMove 1s ease-in-out forwards;
+        }
+
+        .color-box p {
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            bottom: -30px; /* Aggiunto per spostare il testo sotto il quadrato */
+            width: 100%;
+            font-family: 'Pan', sans-serif; /* Stessa famiglia di caratteri degli altri elementi */
+            color: #ffffff; /* Colore del testo */
+            font-size: 16px; /* Dimensione del testo */
+        }
+
+        @keyframes fadeInAndMove {
+            0% { opacity: 0; transform: translateX(-50%); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        #box1 { top: 350px; left: 500px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
+        #box2 { top: 350px; left: 750px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
+        #box3 { top: 350px; left: 1000px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
+    </style>
+    <title>Città</title>
+</head>
+
+<body>
+
+    <div class="cities-container">
+        <a href="#" class="city" id="city1" rel="noopener">Paola</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city2" rel="noopener">San Lucido</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city3" rel="noopener">Cosenza</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city4" rel="noopener">Fiumefreddo <br>Bruzio</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city5" rel="noopener">Longobardi</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city6" rel="noopener">Belmonte<br>Calabro</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city7" rel="noopener">Amantea</a>
+
+        <!-- Aggiunti quadrati di colore con immagini e testo -->
+        <div class="color-box" id="box1">
+            <p>gegatto vespgatto</p>
+        </div>
+        <div class="color-box" id="box2">
+            <p>egatto</p>
+        </div>
+        <div class="color-box" id="box3">
+            <p>salvatore</p>
+        </div>
+    </div>
+
+    <script>
+        // Funzione per gestire il clic su "Paola"
+        document.getElementById('city1').addEventListener('click', function () {
+            // Nascondi tutti i nomi delle città
+            document.querySelectorAll('.city').forEach(function (city) {
+                city.style.left = '100px';
+                if (city.id !== 'city1') {
+                    city.style.top = (parseInt(city.style.top) + 100) + 'px';
+                }
+            });
+            // Mostra i quadrati di colore con immagini e testo
+            document.querySelectorAll('.color-box').forEach(function (box) {
+                box.style.display = 'block';
+            });
+            // Imposta il link del primo quadrato
+            document.getElementById('box1').addEventListener('click', function () {
+                window.location.href = 'https://larivoluzionedelleseppie.org/';
+            });
+            // Imposta il link del secondo quadrato
+            document.getElementById('box2').addEventListener('click', function () {
+                window.location.href = 'https://www.google.com/';
+            });
+            // Imposta il link del terzo quadrato (puoi sostituire con il tuo link preferito)
+            document.getElementById('box3').addEventListener('click', function () {
+                window.location.href = 'https://example.com/';
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
