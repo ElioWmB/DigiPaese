@@ -8,20 +8,38 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('https://larivoluzionedelleseppie.org/wp-content/uploads/2023/09/digi-paese2.png') no-repeat center center fixed;
-            background-size: cover;
-            overflow: hidden; /* Disabilita lo scrolling */
+            overflow: hidden;
+            position: relative;
         }
 
-        /* Imposta la larghezza massima e l'altezza massima della pagina */
-        html, body {
-            max-width: 100vw;
-            max-height: 100vh;
-            overflow: hidden;
+        img.background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: scaleBackground 10s infinite alternate; /* Modifica la durata e lo stile dell'animazione */
+        }
+
+        @keyframes scaleBackground {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .black-rectangle {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5000px;
+            background-color: black;
+            z-index: 0; /* Assicura che il rettangolo sia dietro l'immagine di sfondo e gli altri elementi */
         }
 
         .cities-container {
             position: absolute;
+            z-index: 1; /* Assicura che gli elementi della città siano sovrapposti all'immagine di sfondo */
         }
 
         .city {
@@ -81,6 +99,9 @@
 </head>
 
 <body>
+
+    <img src="https://larivoluzionedelleseppie.org/wp-content/uploads/2023/09/digi-paese2.png" alt="Background Image" class="background-image">
+    <div class="black-rectangle"></div>
 
     <div class="cities-container">
         <a href="#" class="city" id="city1" rel="noopener noreferrer">Paola</a>
