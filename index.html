@@ -13,17 +13,16 @@
         }
 
         img.background-image {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
         }
 
         .cities-container {
             position: absolute;
-            z-index: 1; /* Assicura che gli elementi della città siano sovrapposti all'immagine di sfondo */
+            z-index: 1;
         }
 
         .city {
@@ -33,7 +32,7 @@
             font-size: 36px;
             font-family: 'Pan', sans-serif;
             color: #00FF00;
-            transition: left 0.5s ease, top 0.5s ease;
+            opacity: 0.7; /* Opacità per rendere il testo leggibile */
         }
 
         .color-box {
@@ -41,7 +40,7 @@
             height: 100px;
             position: absolute;
             display: none;
-            animation: fadeInAndMove 1s ease-in-out forwards;
+            opacity: 0.7; /* Opacità per rendere il colore leggibile */
         }
 
         .color-box p {
@@ -55,11 +54,6 @@
             font-size: 16px;
         }
 
-        @keyframes fadeInAndMove {
-            0% { opacity: 0; transform: translateX(-50%); }
-            100% { opacity: 1; transform: translateX(0); }
-        }
-
         #city1 { top: 80px; left: 560px; }
         #city2 { top: 180px; left: 580px; }
         #city3 { top: 200px; left: 850px; }
@@ -71,6 +65,42 @@
         #box1 { top: 350px; left: 500px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
         #box2 { top: 350px; left: 750px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
         #box3 { top: 350px; left: 1000px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
+
+        .city:hover {
+            color: #FF0000;
+            text-decoration: underline;
+        }
+
+        .city:focus {
+            outline: 2px solid #FF0000;
+        }
+
+        .color-box:hover {
+            background-color: rgba(0, 255, 0, 0.5);
+        }
+
+        /* Aggiunto stile per la sezione con i cubi */
+        #sezione-cubi {
+            position: absolute;
+            top: 800px; /* Regola l'altezza in cui posizionare la sezione */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .cubo {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+        }
+
+        .cubo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
     <title>Città</title>
 </head>
@@ -80,52 +110,41 @@
     <img src="https://larivoluzionedelleseppie.org/wp-content/uploads/2023/09/digi-paese2.png" alt="Background Image" class="background-image">
 
     <div class="cities-container">
-        <a href="#" class="city" id="city1" rel="noopener noreferrer">Paola</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city2" rel="noopener noreferrer">San Lucido</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city3" rel="noopener noreferrer">Cosenza</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city4" rel="noopener noreferrer">Fiumefreddo <br>Bruzio</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city5" rel="noopener noreferrer">Longobardi</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city6" rel="noopener noreferrer">Belmonte<br>Calabro</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city7" rel="noopener noreferrer">Amantea</a>
+        <a href="#sezione-cubi" class="city" id="city1" target="_self">Paola</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city2">San Lucido</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city3">Cosenza</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city4">Fiumefreddo <br>Bruzio</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city5">Longobardi</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city6">Belmonte<br>Calabro</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city7">Amantea</a>
 
-        <div class="color-box" id="box1">
+        <a href="https://larivoluzionedelleseppie.org/" class="color-box" id="box1">
             <p>gegatto vespgatto</p>
-        </div>
-        <div class="color-box" id="box2">
+        </a>
+        <a href="https://www.google.com/" class="color-box" id="box2">
             <p>egatto</p>
-        </div>
-        <div class="color-box" id="box3">
+        </a>
+        <a href="https://example.com/" class="color-box" id="box3">
             <p>salvatore</p>
+        </a>
+    </div>
+
+    <!-- Sezione con i cubi -->
+    <div id="sezione-cubi">
+        <div class="cubo">
+            <!-- Immagine del cubo 1 -->
+            <img src="https://placekitten.com/100/100" alt="Cubo 1">
+        </div>
+        <div class="cubo">
+            <!-- Immagine del cubo 2 -->
+            <img src="https://placekitten.com/100/100" alt="Cubo 2">
+        </div>
+        <div class="cubo">
+            <!-- Immagine del cubo 3 -->
+            <img src="https://placekitten.com/100/100" alt="Cubo 3">
         </div>
     </div>
 
-    <script>
-        document.getElementById('city1').addEventListener('click', function () {
-            document.querySelectorAll('.city').forEach(function (city) {
-                city.style.left = '100px';
-                if (city.id !== 'city1') {
-                    city.style.top = (parseInt(city.style.top) + 100) + 'px';
-                }
-            });
-
-            document.querySelectorAll('.color-box').forEach(function (box) {
-                box.style.display = 'block';
-            });
-
-            document.getElementById('box1').addEventListener('click', function () {
-                window.location.href = 'https://larivoluzionedelleseppie.org/';
-            });
-
-            document.getElementById('box2').addEventListener('click', function () {
-                window.location.href = 'https://www.google.com/';
-            });
-
-            document.getElementById('box3').addEventListener('click', function () {
-                window.location.href = 'https://example.com/';
-            });
-        });
-    </script>
-    
 </body>
 
 </html>
