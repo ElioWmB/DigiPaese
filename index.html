@@ -13,7 +13,7 @@
         }
 
         img.background-image {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -62,9 +62,9 @@
         #city6 { top: 420px; left: 640px; }
         #city7 { top: 530px; left: 550px; }
 
-        #box1 { top: 350px; left: 500px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
-        #box2 { top: 350px; left: 750px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
-        #box3 { top: 350px; left: 1000px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
+        #box1 { top: 1000px; left: 500px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
+        #box2 { top: 1000px; left: 750px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
+        #box3 { top: 1000px; left: 1000px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
 
         .city:hover {
             color: #FF0000;
@@ -82,7 +82,7 @@
         /* Aggiunto stile per la sezione con i cubi */
         #sezione-cubi {
             position: absolute;
-            top: 800px; /* Regola l'altezza in cui posizionare la sezione */
+            top: 1500px; /* Regola l'altezza in cui posizionare la sezione */
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -93,14 +93,28 @@
         .cubo {
             width: 100px;
             height: 100px;
-            background-color: lightblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
+
 
         .cubo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 5px; /* Aggiunto il bordo arrotondato */
         }
+
+        .cubo p {
+            font-size: 16px;
+            font-family: 'Pan', sans-serif;
+            color: #00FF00;
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+
     </style>
     <title>Città</title>
 </head>
@@ -118,15 +132,6 @@
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city6">Belmonte<br>Calabro</a>
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city7">Amantea</a>
 
-        <a href="https://larivoluzionedelleseppie.org/" class="color-box" id="box1">
-            <p>gegatto vespgatto</p>
-        </a>
-        <a href="https://www.google.com/" class="color-box" id="box2">
-            <p>egatto</p>
-        </a>
-        <a href="https://example.com/" class="color-box" id="box3">
-            <p>salvatore</p>
-        </a>
     </div>
 
     <!-- Sezione con i cubi -->
@@ -134,14 +139,18 @@
         <div class="cubo">
             <!-- Immagine del cubo 1 -->
             <img src="https://placekitten.com/100/100" alt="Cubo 1">
+            <p>gegatto vespgatto</p>
         </div>
         <div class="cubo">
             <!-- Immagine del cubo 2 -->
             <img src="https://placekitten.com/100/100" alt="Cubo 2">
+            <p>gegatto vespgatto</p>
         </div>
         <div class="cubo">
             <!-- Immagine del cubo 3 -->
             <img src="https://placekitten.com/100/100" alt="Cubo 3">
+            <p>gegatto vespgatto</p>
+
         </div>
     </div>
 
