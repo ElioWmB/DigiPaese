@@ -1,159 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiPaese Terminal</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        img.background-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .cities-container {
-            position: absolute;
-            z-index: 1;
-        }
-
-        .city {
-            padding: 10px;
-            margin: 5px;
-            position: absolute;
-            font-size: 36px;
-            font-family: 'Pan', sans-serif;
+            background-color: #000;
             color: #00FF00;
-            opacity: 0.7; /* Opacità per rendere il testo leggibile */
-        }
-
-        .color-box {
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            display: none;
-            opacity: 0.7; /* Opacità per rendere il colore leggibile */
-        }
-
-        .color-box p {
+            font-family: monospace;
             text-align: center;
             margin: 0;
-            position: absolute;
-            bottom: -30px;
-            width: 100%;
-            font-family: 'Pan', sans-serif;
-            color: #ffffff;
-            font-size: 16px;
-        }
-
-        #city1 { top: 80px; left: 560px; }
-        #city2 { top: 180px; left: 580px; }
-        #city3 { top: 200px; left: 850px; }
-        #city4 { top: 270px; left: 530px; }
-        #city5 { top: 370px; left: 550px; }
-        #city6 { top: 420px; left: 640px; }
-        #city7 { top: 530px; left: 550px; }
-
-        #box1 { top: 1000px; left: 500px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
-        #box2 { top: 1000px; left: 750px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
-        #box3 { top: 1000px; left: 1000px; background-image: url('https://placekitten.com/100/100'); background-size: cover; }
-
-        .city:hover {
-            color: #FF0000;
-            text-decoration: underline;
-        }
-
-        .city:focus {
-            outline: 2px solid #FF0000;
-        }
-
-        .color-box:hover {
-            background-color: rgba(0, 255, 0, 0.5);
-        }
-
-        /* Aggiunto stile per la sezione con i cubi */
-        #sezione-cubi {
-            position: absolute;
-            top: 1500px; /* Regola l'altezza in cui posizionare la sezione */
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-        }
-
-        .cubo {
-            width: 100px;
-            height: 100px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            height: 100vh;
         }
 
-
-        .cubo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px; /* Aggiunto il bordo arrotondato */
+        #terminal {
+            padding: 20px;
+            border: 2px solid #00FF00;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
 
-        .cubo p {
-            font-size: 16px;
-            font-family: 'Pan', sans-serif;
-            color: #00FF00;
+        #qrCode {
             margin-top: 20px;
-            margin-bottom: 100px;
+            width: 200px;
+            height: auto;
         }
-
     </style>
-    <title>Città</title>
 </head>
-
 <body>
-
-    <img src="https://larivoluzionedelleseppie.org/wp-content/uploads/2023/09/digi-paese2.png" alt="Background Image" class="background-image">
-
-    <div class="cities-container">
-        <a href="#sezione-cubi" class="city" id="city1" target="_self">Paola</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city2">San Lucido</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city3">Cosenza</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city4">Fiumefreddo <br>Bruzio</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city5">Longobardi</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city6">Belmonte<br>Calabro</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self" class="city" id="city7">Amantea</a>
-
+    <div id="terminal">
+        <pre>
+ _____  _       _   _____                     
+|  __ \(_)     (_) |  __ \                    
+| |  | |_  __ _ _  | |__) |_ _  ___  ___  ___ 
+| |  | | |/ _` | | |  ___/ _` |/ _ \/ __|/ _ \
+| |__| | | (_| | | | |  | (_| |  __/\__ \  __/
+|_____/|_|\__, |_| |_|   \__,_|\___||___/\___|
+          __/ |                            
+         |___/                             
+        </pre>
+        <p>Hello World. Benvenuto in DigiPaese. Stiamo arrivando. </p>
+        <p>Hello World. Benvenuto in DigiPaese. Stiamo arrivando. </p>
+        <p>Hello World. Benvenuto in DigiPaese. Stiamo arrivando. </p>
+        <p>Hello World. Benvenuto in DigiPaese. Stiamo arrivando. </p>
+        <p>Hello World. Benvenuto in DigiPaese. Stiamo arrivando. </p>
+        <p>Hello World. Benvenuto in DigiPaese. Stiamo arrivando. </p>
     </div>
 
-    <!-- Sezione con i cubi -->
-    <div id="sezione-cubi">
-        <div class="cubo">
-            <!-- Immagine del cubo 1 -->
-            <img src="https://placekitten.com/100/100" alt="Cubo 1">
-            <p>gegatto vespgatto</p>
-        </div>
-        <div class="cubo">
-            <!-- Immagine del cubo 2 -->
-            <img src="https://placekitten.com/100/100" alt="Cubo 2">
-            <p>gegatto vespgatto</p>
-        </div>
-        <div class="cubo">
-            <!-- Immagine del cubo 3 -->
-            <img src="https://placekitten.com/100/100" alt="Cubo 3">
-            <p>gegatto vespgatto</p>
-
-        </div>
+    <div id="qrCode">
+        <img src="https://i.ibb.co/fVR6TTf/qr-code-7.png" alt="QR Code" width="200">
     </div>
-
 </body>
-
 </html>

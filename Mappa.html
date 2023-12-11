@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cities-container {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .city {
+            padding: 10px;
+            margin: 5px;
+            position: absolute;
+            font-size: 30px;
+            font-family: 'Pan', sans-serif;
+            color: #00FF00;
+            transition: left 0.5s ease, top 0.5s ease;
+        }
+
+        @keyframes fadeInAndMove {
+            0% { opacity: 0; transform: translateX(-50%); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        #city1 { top: 10vh; left: 28vw; }
+        #city2 { top: 20vh; left: 28vw; }
+        #city3 { top: 25vh; left: 53vw; }
+        #city4 { top: 33vh; left: 30vw; }
+        #city5 { top: 45vh; left: 28vw; }
+        #city6 { top: 55vh; left: 40vw; }
+        #city7 { top: 65vh; left: 28vw; }
+    </style>
+    <title>Città</title>
+</head>
+
+<body>
+
+    <div class="cities-container">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city1" rel="noopener noreferrer">Paola </a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city2" rel="noopener noreferrer">San Lucido</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city3" rel="noopener noreferrer">Cosenza</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city4" rel="noopener noreferrer">Fiumefreddo <br>Bruzio</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city5" rel="noopener noreferrer">Longobardi</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city6" rel="noopener noreferrer">Belmonte<br>Calabro</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="city" id="city7" rel="noopener noreferrer">Amantea</a>
+    </div>
+
+    
+</body>
+
+</html>
